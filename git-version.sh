@@ -37,8 +37,8 @@ version="$sha"
 versiond="$sha-systemd"
 
 if [ "$(git diff HEAD | wc -l)" != "0" ]; then
-	version="$version+"
-	versiond="$versiond+"
+	version="$version+arm"
+	versiond="$versiond+arm"
 fi
 
 echo "<!ENTITY version           \"$version\">"            >  version.ent

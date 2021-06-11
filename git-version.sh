@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! git status > /dev/null; then
 	# Either it's not a git repository, or git is unavaliable.

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-intro-changelog">
+  <?dbhtml filename="changelog.html"?>
+
+  <title>Changelog</title>
+
+  <para>This is version 
+        <phrase revision="sysv">&version;</phrase>
+        <phrase revision="systemd">&versiond;</phrase>
+  of the Linux From Scratch book, dated
+  &releasedate;. If this book is more than six months old, a newer and better
+  version is probably already available. To find out, please check one of the
+  mirrors via <ulink url="&lfs-root;mirrors.html"/>.</para>
+
+  <para>Below is a list of changes made since the previous release of the
+  book.</para>
+
+  <itemizedlist>
+    <title>Changelog Entries:</title>
+
+<!-- Changelog template
+
+    <listitem>
+      <para>Date</para>
+      <itemizedlist>
+        <listitem>
+          <para>[name] - New changelog entry.</para>
+        </listitem>
+        <listitem>
+          <para>[name] - Previous changelog entry.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    Note:  If a change is only specific to sysv or systemd, then use
+    <listitem revision="sysv"> or <listitem revision="systemd"> as
+    appropriate for the entry or if needed the entire day's listitem.
+    -->
+    <listitem>
+      <para>2021-06-09</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - For consistency, make the cpp link in /usr/lib.
+          </para>
+        </listitem>
+        <listitem>
+          <para>[ken] - Install iproute2 programs in /usr/sbin for
+          consistency.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="sysv">
+      <para>2021-06-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Make shutting down the netwrok more robust.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="sysv">
+      <para>2021-06-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[thomas] - Tweak sendsignal bootscript to avoid
+            killing mdmod (if active).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - Update to linux-5.12.8 (security fix). Fixes
+          <ulink url="&lfs-ticket-root;4863">#4863</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-28</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20210526. Addresses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.2890. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to zstd-1.5.0. Fixes
+          <ulink url="&lfs-ticket-root;4858">#4858</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to perl-5.34.0. Fixes
+          <ulink url="&lfs-ticket-root;4860">#4860</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to inux-5.12.7. Fixes
+          <ulink url="&lfs-ticket-root;4857">#4857</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.50. Fixes
+          <ulink url="&lfs-ticket-root;4862">#4862</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-29. Fixes
+          <ulink url="&lfs-ticket-root;4859">#4859</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.4.1. Fixes
+          <ulink url="&lfs-ticket-root;4861">#4861</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.185. Fixes
+          <ulink url="&lfs-ticket-root;4855">#4855</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-4.0.2. Fixes
+          <ulink url="&lfs-ticket-root;4855">#4855</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[thomas] - Remove obsolete DOCDIR option from iproute2 install command.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Tweak install directories for eudev and e2fsprogs.
+          Thanks to Ryan Marsaw for the report.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - Add a Note about upgrading in OpenSSL.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-05-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Removed instructions for running tests
+          in Python due to an indefinite hang in the partial
+          LFS envrionment.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Moved LFS to a merged-/usr configuration. Thanks
+          goes to Xi Ruoyao for doing almost all of the work. Fixes
+          <ulink url="&lfs-ticket-root;4848">#4848</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to gcc-11.1.0. Fixes
+          <ulink url="&lfs-ticket-root;4847">#4847</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Fix a FTBFS when building glibc-2.33 with
+          gcc-11.1.0.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[renodr] - Update to systemd-248. Fixes
+          <ulink url="&lfs-ticket-root;4841">#4841</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to iproute2-5.12.0. Fixes
+          <ulink url="&lfs-ticket-root;4852">#4852</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to Python-3.9.5. Fixes
+          <ulink url="&lfs-ticket-root;4854">#4854</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to meson-0.58.0. Fixes
+          <ulink url="&lfs-ticket-root;4853">#4853</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-5.12.2. Fixes
+          <ulink url="&lfs-ticket-root;4840">#4840</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-04-28</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Fix building systemd with Linux-API-Headers 5.11.14
+          and higher, as well as with meson-0.57.2. Fixes
+          <ulink url="&lfs-ticket-root;4851">#4851</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add manual locales needed for tests
+          if using alternate locale installation instructions. Fixes
+          <ulink url="&lfs-ticket-root;4844">#4844</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Minor changes to boot scripts. Fixes
+          <ulink url="&lfs-ticket-root;4842">#4842</ulink>.
+          Thanks to Scott Andrews for the report.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-04-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.2812. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20210407. Addresses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python3-3.9.4. Fixes
+          <ulink url="&lfs-ticket-root;4843">#4843</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.57.2. Fixes
+          <ulink url="&lfs-ticket-root;4846">#4846</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.11.16. Addresses
+          <ulink url="&lfs-ticket-root;4840">#4840</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-581. Fixes
+          <ulink url="&lfs-ticket-root;4849">#4849</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.40. Fixes
+          <ulink url="&lfs-ticket-root;4839">#4839</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-4.0.1. Fixes
+          <ulink url="&lfs-ticket-root;4845">#4845</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-04-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Revert 2772bb9c, as the proposed fix in it is
+          rejected by Python maintainers explicitly.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-04-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>The XML source code of this book is migrated from SVN
+          to Git.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to openssl-1.1.1k (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;4838">#4838</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to attr-2.5.1. Fixes
+          <ulink url="&lfs-ticket-root;4833">#4833</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-5.11.10. Fixes
+          <ulink url="&lfs-ticket-root;4834">#4834</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to bc-3.3.4. Fixes
+          <ulink url="&lfs-ticket-root;4835">#4835</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-pages-5.11. Fixes
+          <ulink url="&lfs-ticket-root;4836">#4836</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to expat-2.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4837">#4837</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to acl-2.3.1. Fixes
+          <ulink url="&lfs-ticket-root;4832">#4832</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Use <option>-j1</option> for Binutils
+		    installation.  Thanks report from Hans Meier.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.2604. Addreses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20210304. Addreses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to zstd-1.4.9. Fixes
+          <ulink url="&lfs-ticket-root;4827">#4827</ulink>.</para>
+        </listitem>
+        <listitem revision="sysv">
+          <para>[bdubbs] - Update to sysvinit-2.99. Fixes
+          <ulink url="&lfs-ticket-root;4822">#4822</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.11.6. Fixes
+          <ulink url="&lfs-ticket-root;4824">#4824</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.49. Fixes
+          <ulink url="&lfs-ticket-root;4831">#4831</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.11.0. Fixes
+          <ulink url="&lfs-ticket-root;4823">#4823</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.46.2. Fixes
+          <ulink url="&lfs-ticket-root;4826">#4826</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.7.6. Fixes
+          <ulink url="&lfs-ticket-root;4828">#4828</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.3.3. Fixes
+          <ulink url="&lfs-ticket-root;4825">#4825</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to attr-2.5.0. Fixes
+          <ulink url="&lfs-ticket-root;4830">#4830</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to acl-2.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4829">#4829</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2021-03-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Simplify the installation of systemd man pages.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2021-03-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Patch systemd-247 so that it will function with
+          Linux-5.11 API headers.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Fix a header file for python, so that
+          <command>#include &lt;python&python-minor;/Python.h&gt;</command>
+          works.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-10.1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+</sect1>

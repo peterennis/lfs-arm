@@ -30,7 +30,7 @@ esac
 full_date="$month $day$suffix, $year"
 
 sha="$(git describe --always --abbrev=1)"
-if [ "$(git branch --show-current)" = "main" ]; then
+if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ]; then
 	sha=$(echo "$sha" | sed 's/-g[^-]*$//')
 fi
 version="$sha-sysv"

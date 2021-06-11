@@ -30,6 +30,12 @@
       <firstname>Editor: DJ</firstname>
       <surname>Lucas</surname>
     </author>
+
+    <author revision="systemd">
+      <firstname>Editor: William</firstname>
+      <surname>Harrington</surname>
+    </author>
+
   </authorgroup>
 
   <copyright id="copyright">

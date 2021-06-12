@@ -58,6 +58,9 @@
         <listitem>
           <para>[William] - Change minimum kernel version to 5.4.</para>
         </listitem>
+        <listitem>
+          <para>[William] - Remove libquadmath references.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 

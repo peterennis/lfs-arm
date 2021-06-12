@@ -337,7 +337,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
         libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
         liblsan.{a,so}, liblto_plugin.so,
-        libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
+        libssp.{a,so}, libssp_nonshared.a,
         libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
         and libubsan.{a,so}</seg>
 

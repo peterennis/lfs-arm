@@ -228,7 +228,7 @@
 <!ENTITY gcc-tmpp2-sbu "11 SBU">
 <!ENTITY gcc-fin-du "4.6 GB ">
 <!ENTITY gcc-fin-sbu "95 SBU (with tests)">
-<!ENTITY libquadmath-version "0.0.0">
+<!--!ENTITY libquadmath-version "0.0.0"-->
 <!ENTITY libstdcpp-version   "6.0.29">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">

@@ -55,10 +55,6 @@
     <screen><userinput remap="pre">sed -e '402a\      *result = local->data.services[database_index];' \
     -i nss/nss_database.c</userinput></screen>
 
-    <para>Fix a build issue with gcc-11.1:</para>
-
-<screen><userinput remap="pre">sed 's/amx_/amx-/' -i sysdeps/x86/tst-cpu-features-supports.c</userinput></screen>
-
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
 
@@ -120,17 +116,6 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry>
-        <term><option>libc_cv_include_x86_isa_level=no</option></term>
-        <listitem>
-          <para>This disables <quote>x86 ISA needed</quote> property in
-          Glibc libraries.  Use it <emphasis role="bold">if</emphasis>
-          you are building Glibc with <option>-march</option> option in
-          <envar>CFLAGS</envar>, to workaround an issue in Glibc-2.33
-          breaking it.</para>
-        </listitem>
-      </varlistentry>
-
     </variablelist>
 
     <para>Compile the package:</para>
@@ -147,8 +132,8 @@ cd       build</userinput></screen>
 
 <!-- Use remap="make" here to work around a jhalfs issue. -->
 <!--<screen><userinput remap="make">case $(uname -m) in
-  i?86)   ln -sfnv $PWD/elf/ld-linux.so.2        /lib ;;
-  x86_64) ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib ;;
+  arm*)   ln -sfnv $PWD/elf/ld-linux-armhf.so.3        /lib ;;
+  aarch64) ln -sfnv $PWD/elf/ld-linux-aarch64.so.1 /lib ;;
 esac</userinput></screen>
 
     <note><para>The symbolic link above is needed to run the tests at this
@@ -435,7 +420,8 @@ unset ZONEINFO</userinput></screen>
     </indexterm>
 
     <para>By default, the dynamic loader (<filename
-    class="libraryfile">/lib/ld-linux.so.2</filename>) searches through
+    class="libraryfile">/lib/ld-linux-armhf.so.3 
+    /lib/ld-linux-aarch64.so.1</filename>) searches through
     <filename class="directory">/lib</filename> and <filename
     class="directory">/usr/lib</filename> for dynamic libraries that are
     needed by programs as they are run. However, if there are libraries in

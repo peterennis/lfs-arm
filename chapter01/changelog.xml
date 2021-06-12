@@ -43,6 +43,22 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2021-06-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[William] - Adjust GCC and GLIBC commands for ARM/AARCH64.
+          </para>
+        </listitem>
+        <listitem>
+          <para>[William] - Add getdents64 patch for Coreutils-8.32.</para>
+        </listitem>
+        <listitem>
+          <para>[William] - Add --build configure option for Expect5.45.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2021-06-09</para>
       <itemizedlist>
         <listitem>

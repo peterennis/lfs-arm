@@ -840,8 +840,8 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-         Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch, Perl, Sed, Tar,
-         Texinfo, and Zstd</seg>
+         Gettext, Glibc, GMP, Grep, ISL, M4, Make, MPC, MPFR, Patch, Perl, Sed,
+	 Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -865,8 +865,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg><ulink url="http://gcc.gnu.org/wiki/GNAT">GNAT</ulink> and 
-               <ulink url="https://repo.or.cz/isl.git">ISL</ulink> 
+          <seg><ulink url="http://gcc.gnu.org/wiki/GNAT">GNAT</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -1336,6 +1335,33 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin ISL dependency info -->
+  <bridgehead renderas="sect2" id="isl-dep">ISL</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Binutils, Coreutils, Diffutils, Glibc, Gawk, GCC, Grep,
+         GMP, Make, MPC, MPFR, Sed, Texinfo</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>GCC</seg>
+        </seglistitem>
+      </segmentedlist>
 <!-- Begin Kbd dependency info -->
   <bridgehead renderas="sect2" id="kbd-dep">Kbd</bridgehead>
 

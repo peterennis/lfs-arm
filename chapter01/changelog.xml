@@ -55,6 +55,9 @@
         <listitem>
           <para>[William] - Add --build configure option for Expect5.45.</para>
         </listitem>
+        <listitem>
+          <para>[William] - Change minimum kernel version to 5.4.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 

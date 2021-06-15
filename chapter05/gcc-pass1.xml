@@ -64,7 +64,7 @@ mv -v mpc-&mpc-version; mpc
 tar -xf ../isl-&isl-version;.tar.xz
 mv -v isl-&isl-version; isl</userinput></screen>
 
-    <para>On x86_64 hosts, set the default directory name for
+    <para>On aarch64 hosts, set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
@@ -154,8 +154,8 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>On x86_64, LFS does not support a multilib configuration.
-          This switch is harmless for x86.</para>
+          <para>On aarch64, LFS does not support a multilib configuration.
+          This switch is harmless for arm.</para>
         </listitem>
       </varlistentry>
 

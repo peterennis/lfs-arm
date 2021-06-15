@@ -78,7 +78,7 @@
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--host=$(uname -m)-uknown-linux-gnu</parameter></term>
+        <term><parameter>--build=$(uname -m)-uknown-linux-gnu</parameter></term>
         <listitem>
 	  <para>This tells Expect what the architecture build of the machine
           is for ARM.</para>

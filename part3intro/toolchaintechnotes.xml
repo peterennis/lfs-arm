@@ -148,8 +148,9 @@
       script that comes with the source for many packages. Unpack the binutils
       sources and run the script: <userinput>./config.guess</userinput> and note
       the output. For example, for a 32-bit ARM processor the
-      output may be <emphasis>armv6l-unknown-linux-gnu</emphasis>. On a 64-bit
-      system it may be <emphasis>aarch64-unknown-linux-gnu</emphasis>.</para>
+      output may be <emphasis>armv6l-unknown-linux-gnueabi</emphasis>. On a 
+      64-bit system it may 
+      be <emphasis>aarch64-unknown-linux-gnu</emphasis>.</para>
 
       <para>Also be aware of the name of the platform's dynamic linker, often
       referred to as the dynamic loader (not to be confused with the standard

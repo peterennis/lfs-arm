@@ -117,8 +117,8 @@ su tester -c "make -k check"</userinput></screen>
         chmem, choom, chrt, col, colcrt, colrm, column, ctrlaltdel, delpart, dmesg,
         eject, fallocate, fdformat, fdisk, fincore, findfs, findmnt, flock, fsck,
         fsck.cramfs, fsck.minix, fsfreeze, fstrim, getopt, hexdump, hwclock,
-        i386, ionice, ipcmk, ipcrm, ipcs, isosize, kill, last, lastb (link to
-        last), ldattach, linux32, linux64, logger, look, losetup, lsblk, lscpu,
+	ionice, ipcmk, ipcrm, ipcs, isosize, kill, last, lastb (link to last), 
+	ldattach, linux32, linux64, logger, look, losetup, lsblk, lscpu,
         lsipc, lslocks, lslogins, lsmem, lsns, mcookie, mesg, mkfs, mkfs.bfs, mkfs.cramfs, mkfs.minix, mkswap,
         more, mount, mountpoint, namei, nsenter, partx, pivot_root, prlimit, raw,
         readprofile, rename, renice, resizepart, rev, rfkill, rtcwake, script,
@@ -503,16 +503,6 @@ su tester -c "make -k check"</userinput></screen>
           clock</para>
           <indexterm zone="ch-system-util-linux hwclock">
             <primary sortas="b-hwclock">hwclock</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="i386">
-        <term><command>i386</command></term>
-        <listitem>
-          <para>A symbolic link to setarch</para>
-          <indexterm zone="ch-system-util-linux i386">
-            <primary sortas="b-i386">i386</primary>
           </indexterm>
         </listitem>
       </varlistentry>

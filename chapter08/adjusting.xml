@@ -52,14 +52,14 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   and the output of the last command will be (allowing for
   platform-specific differences in the dynamic linker name):</para>
 
-<screen os="c"><computeroutput>[Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
+<screen os="c"><computeroutput>[Requesting program interpreter: /lib64/ld-linux-aarch64.so.1]</computeroutput></screen>
 
   <para>Note that on 64-bit systems <filename class="directory">/lib</filename> is
   the location of our dynamic linker, but is accessed via a symbolic link
   in /lib64.</para>
 
   <note><para>On 32-bit systems the interpreter should be
-  /lib/ld-linux.so.2.</para></note>
+  /lib/ld-linux-armhf.so.3.</para></note>
 
   <para os="d">Now make sure that we're setup to use the correct start files:</para>
 
@@ -111,7 +111,7 @@ SEARCH_DIR("/lib")</computeroutput></screen>
   <para os="r">The output of the last command should be (allowing for
   platform-specific differences in dynamic linker name):</para>
 
-<screen os="s"><computeroutput>found ld-linux-x86-64.so.2 at /usr/lib/ld-linux-x86-64.so.2</computeroutput></screen>
+<screen os="s"><computeroutput>found ld-linux-aarch64.so.1 at /usr/lib/ld-linux-aarch64.so.1</computeroutput></screen>
 
   <para os="t">If the output does not appear as shown above or is not received
   at all, then something is seriously wrong. Investigate and retrace the

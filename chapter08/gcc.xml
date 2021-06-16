@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
+    <para>If building on aarch64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in

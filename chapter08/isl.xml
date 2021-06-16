@@ -40,6 +40,15 @@
   <sect2 role="installation">
     <title>Installation of ISL</title>
 
+    <note>
+	    <para>CFLAGS and CXXFLAGS can use the following flags for using ISL
+	    with Graphite loop optimizations:
+      <userinput>-fgraphite-identity -ftree-loop-distribution 
+      -floop-nest-optimize -floop-strip-mine -floop-interchange -floop-block 
+      -ftree-loop-distribute-patterns</userinput>
+      </para>
+    </note>
+
     <para>Prepare ISL for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \

@@ -43,7 +43,7 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
-      <para>2021-05-15</para>
+      <para>2021-06-15</para>
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Update to iana-etc-20210611. Addresses
@@ -80,14 +80,15 @@
       <para>2021-06-15</para>
       <itemizedlist>
         <listitem>
-	  <para>[William] - Adjust x86_64/i386 entries for aarch64/arm.</para>
+          <para>[William] - Adjust x86_64/i386 entries for aarch64/arm. Fixes
+          <ulink url="&lfsarm-ticket-root;1">#1</ulink>.</para>
         </listitem>
         <listitem>
-           <para>[William] - Add note for using ISL and Graphite loop 
-           optimizations.</para>
+          <para>[William] - Add note for using ISL and Graphite loop 
+          optimizations.</para>
         </listitem>
         <listitem>
-          <para>[William] - Move man-db after systemd.</para>
+          <para>[William] - Move man-db after eudev/systemd.</para>
         </listitem>
       </itemizedlist>
     </listitem>

@@ -39,6 +39,7 @@
 <!ENTITY erratad         "&lfs-root;lfs/errata/&generic-versiond;/">
 
 <!ENTITY lfs-ticket-root "https://wiki.linuxfromscratch.org/lfs/ticket/">
+<!ENTITY lfsarm-ticket-root "https://github.com/cross-lfs/lfs-arm/issues/">
 
 <!ENTITY anduin-sources  "https://anduin.linuxfromscratch.org/LFS">
 

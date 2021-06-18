@@ -43,6 +43,16 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2021-06-17</para>
+      <itemizedlist>
+        <listitem>
+	  <para>[William] - Add a sed for libcap to install capsh. Referenced
+	  at <ulink url="https://git.kernel.org/pub/scm/libs/libcap/libcap.git/commit/?id=fc82332156dc04c24578aefcb7741d749d025032;git.kernel.org">.</ulink></para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2021-06-15</para>
       <itemizedlist>
         <listitem>

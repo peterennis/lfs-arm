@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Libcap</title>
 
-    <para>Ensure capsh is installed by default:</para>
+    <para>First, fix an upstream oversight in the latest release:</para>
 
 <screen><userinput remap="pre">sed -i 's/ $(PROGS)/&amp; capsh/' progs/Makefile</userinput></screen>
 

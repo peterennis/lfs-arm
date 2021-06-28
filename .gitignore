@@ -1,2 +1,3 @@
+lfs-bootscripts-*.tar.xz
 version.ent
-lfs-bootscripts-*
+appendices/*.script

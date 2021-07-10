@@ -138,9 +138,12 @@
     <listitem>
       <para>IPRoute2-&iproute2-version;</para>
     </listitem>
-    <listitem>
+    <!--<listitem>
       <para>ISL-&isl-version;</para>
-    </listitem>
+    </listitem>-->
+    <!--listitem revision="systemd">
+      <para>Jinja2-&jinja2-version;</para>
+    </listitem>-->
     <!--<listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>-->
@@ -183,6 +186,9 @@
     <listitem>
       <para>Man-pages-&man-pages-version;</para>
     </listitem>
+    <!--<listitem revision="systemd">
+      <para>MarkupSafe-&markupsafe-version;</para>
+    </listitem>-->
     <listitem>
       <para>Meson-&meson-version;</para>
     </listitem>
@@ -240,12 +246,12 @@
     <!--<listitem>
       <para>Tar-&tar-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tcl-&tcl-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Texinfo-&texinfo-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
@@ -284,11 +290,14 @@
     <!--<listitem>
       <para>meson-0.56.0-upstream_fix-1.patch</para>
     </listitem>-->
-    <listitem>
-      <para>systemd-247-upstream_fixes-2.patch</para>
+    <listitem revision="systemd">
+      <para>MarkupSafe-&markupsafe-version;</para>
+    </listitem>
+    <listitem revision="systemd">
+      <para>Jinja2-&jinja2-version;</para>
     </listitem>
     <listitem>
-      <para>systemd-247-upstream_fixes-1.patch</para>
+      <para>ISL-&isl-version;</para>
     </listitem>
 
   </itemizedlist>

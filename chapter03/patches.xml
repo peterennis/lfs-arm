@@ -85,14 +85,6 @@
     </varlistentry>
 -->
     <varlistentry>
-      <term>GCC Linux Fix Patch - <token>&gcc-linux-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink url="http://clfs.org/~kb0iic/patches/&gcc-linux-patch;"/></para>
-        <para>MD5 sum: <literal>&gcc-linux-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Kbd Backspace/Delete Fix Patch - <token>&kbd-backspace-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&kbd-backspace-patch;"/></para>

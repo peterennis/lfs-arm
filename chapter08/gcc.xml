@@ -41,10 +41,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>Fix a compile error with Linux-5.12+</para>
-
-<screen><userinput remap="pre">patch -Np1 -i &gcc-linux-patch;</userinput></screen>
-
     <para>If building on aarch64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 

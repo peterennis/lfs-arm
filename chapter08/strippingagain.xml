@@ -44,12 +44,12 @@
 
 <!--<screen><userinput>save_lib="ld-2.25.so libc-2.25.so libpthread-2.25.so libthread_db-1.0.so"-->
 		<screen><userinput>save_usrlib="ld-&glibc-version;.so
-                                   libc-&glibc-version;.so
-                                   libpthread-&glibc-version;.so
-                                   libthread_db-&libthread_db-version;.so
-                                   libstdc++.so.&libstdcpp-version;
-                                   libitm.so.&libitm-version;
-                                   libatomic.so.&libatomic-version;"
+                       libc-&glibc-version;.so
+                       libpthread-&glibc-version;.so
+                       libthread_db-&libthread_db-version;.so
+                       libstdc++.so.&libstdcpp-version;
+                       libitm.so.&libitm-version;
+                       libatomic.so.&libatomic-version;"
 
 cd /usr/lib
 

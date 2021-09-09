@@ -472,7 +472,7 @@
         <seglistitem>
           <seg>
             <ulink url="https://metacpan.org/pod/Expect">Expect.pm</ulink>
-            and 
+            and
             <ulink url="https://metacpan.org/pod/IO::Tty">IO::Tty</ulink>
           </seg>
         </seglistitem>
@@ -747,7 +747,7 @@
         <seglistitem>
           <seg>
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
-          </seg>  
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -918,8 +918,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch, Perl, Sed,
-          Tar, Texinfo, and Zstd</seg>
+          Gettext, Glibc, GMP, Grep, ISL, M4, Make, MPC, MPFR, Patch, Perl, 
+          Sed, Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2593,7 +2593,6 @@
           Zlib</seg>
         </seglistitem>
       </segmentedlist>
-        
 
       <segmentedlist id="python-testdeps">
         <segtitle>&testsuites;</segtitle>

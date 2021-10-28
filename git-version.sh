@@ -48,11 +48,9 @@ esac
 full_date="$month $day$suffix, $year"
 
 sha="$(git describe --always --abbrev=1)"
-if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ]; then
-	sha=$(echo "$sha" | sed 's/-g[^-]*$//')
-fi
-version="$sha"
-versiond="$sha-systemd"
+rev=$(echo "$sha" | sed 's/-g[^-]*$//')
+version="$rev"
+versiond="$rev-systemd"
 
 if [ "$(git diff HEAD | wc -l)" != "0" ]; then
 	version="$version+"

@@ -34,9 +34,11 @@
 <!ENTITY flex-fixes-patch-size "3.4 KB">
 -->
 
+<!--
 <!ENTITY file-upstream-fixes-patch "file-&file-version;-upstream_fixes-1.patch">
 <!ENTITY file-upstream-fixes-md5 "d99090db596b9db2bed869662199a56a">
 <!ENTITY file-upstream-fixes-patch-size "4.0 KB">
+-->
 
 <!--
 <!ENTITY gcc-cross-patch "gcc-&gcc-version;-cet_fix-1.patch">

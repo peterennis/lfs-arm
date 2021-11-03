@@ -52,7 +52,7 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   and the output of the last command will be (allowing for
   platform-specific differences in the dynamic linker name):</para>
 
-<screen os="c"><computeroutput>[Requesting program interpreter: /lib64/ld-linux-aarch64.so.1]</computeroutput></screen>
+<screen os="c"><computeroutput>[Requesting program interpreter: /lib/ld-linux-aarch64.so.1]</computeroutput></screen>
 
   <para>Note that on 64-bit systems <filename class="directory">/lib</filename> is
   the location of our dynamic linker, but is accessed via a symbolic link

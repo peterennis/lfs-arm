@@ -114,7 +114,7 @@ if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2f
 if ( $package == "expat"      ) $dirpath = "http://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
 if ( $package == "expect"     ) $dirpath = "http://sourceforge.net/projects/expect/files";
-if ( $package == "file"       ) $dirpath = "https://github.com/file/file/releases";
+if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
 if ( $package == "flex"       ) $dirpath = "https://github.com/westes/flex/releases";
 if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
 if ( $package == "iana-etc"   ) $dirpath = "https://github.com/Mic92/iana-etc/releases";
@@ -133,7 +133,7 @@ if ( $package == "Jinja"      ) $dirpath = "https://pypi.python.org/pypi/Jinja2/
 if ( $package == "systemd"    ) $dirpath = "https://github.com/systemd/systemd/releases";
 if ( $package == "tcl"        ) $dirpath = "http://sourceforge.net/projects/tcl/files";
 if ( $package == "util-linux" ) $dirpath = max_parent( $dirpath, "v." );
-if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/releases";
+if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/tags";
 if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/releases";
 //if ( $package == "vim"        ) $dirpath = "ftp://ftp.vim.org/pub/vim/unix";
 
@@ -318,7 +318,7 @@ function get_current()
 
    # Make version.ent
    chdir( "$tmpdir/LFS" );
-   exec ( "./git-version.sh" );
+   exec ( "./git-version.sh systemd" );
 
    chdir( $cdir );
 

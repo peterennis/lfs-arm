@@ -193,7 +193,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
       <para>If everything is working correctly, there should be no errors,
       and the output of the last command will be of the form:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /lib64/ld-linux-aarch64.so.1]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /lib/ld-linux-aarch64.so.1]</computeroutput></screen>
 
       <para>Note that for 32-bit machines, the interpreter name will be
       <filename>/lib/ld-linux-armhf.so.3</filename>.</para>

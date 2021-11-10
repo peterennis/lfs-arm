@@ -20,10 +20,6 @@
 <!ENTITY bzip2-docs-patch-md5 "6a5ac7e89b791aae556de0f745916f7f">
 <!ENTITY bzip2-docs-patch-size "1.6 KB">
 
-<!ENTITY coreutils-getdents64-patch "coreutils-&coreutils-version;-getdents64-1.patch">
-<!ENTITY coreutils-getdents64-patch-md5 "29c8113d2f6547a0487ce89a73e55e1f">
-<!ENTITY coreutils-getdents64-patch-size "3 KB">
-
 <!ENTITY coreutils-i18n-patch "coreutils-&coreutils-version;-i18n-1.patch">
 <!ENTITY coreutils-i18n-patch-md5 "1eeba2736dfea013509f9975365e4e32">
 <!ENTITY coreutils-i18n-patch-size "166 KB">

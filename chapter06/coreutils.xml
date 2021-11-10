@@ -43,11 +43,6 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para>The following patch fixes an issue during compilation and getdents64.
-    </para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&coreutils-getdents64-patch;</userinput></screen>
-
     <para>Prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                     \

@@ -53,14 +53,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Coreutils getdents64(2) Fixes Patch - <token>&coreutils-getdents64-patch-size;</token>:</term>
-      <listitem>
-	      <para>Download: <ulink url="http://clfs.org/~kb0iic/patches/&coreutils-getdents64-patch;"/></para>
-        <para>MD5 sum: <literal>&coreutils-getdents64-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Coreutils Internationalization Fixes Patch - <token>&coreutils-i18n-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&coreutils-i18n-patch;"/></para>

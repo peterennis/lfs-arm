@@ -70,7 +70,7 @@
           system, use the less capable system as a parameter. For details 
           about alternative system types, see <ulink 
           url='https://gcc.gnu.org/onlinedocs/gcc-&gcc-version;/gcc/ARM-Options.html'>
-          the x86 options in the GCC manual</ulink>.</para>
+          the ARM options in the GCC manual</ulink>.</para>
         </listitem>
       </varlistentry>
 

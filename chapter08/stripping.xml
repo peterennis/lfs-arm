@@ -46,7 +46,7 @@
 <screen><userinput>save_usrlib="$(cd /usr/lib; ls ld-linux*)
              libc.so.6
              libthread_db.so.1
-             libstdc++.so.&libstdcpp-version;"
+             libstdc++.so.&libstdcpp-version;
              libitm.so.&libitm-version;
              libatomic.so.&libatomic-version;"
 

@@ -63,10 +63,10 @@ done
 
 online_usrbin="bash find strip"
 online_usrlib="libbfd-&binutils-version;.so
-               libhistory.so.&readline-version;
+               libhistory.so.&readline-soname-version;
                libncursesw.so.&ncurses-version;
                libm.so.6
-               libreadline.so.&readline-version;
+               libreadline.so.&readline-soname-version;
                libz.so.&zlib-version;
                $(cd /usr/lib; find libnss*.so* -type f)"
 

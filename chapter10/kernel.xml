@@ -97,7 +97,6 @@
     <ulink url="http://www.kroah.com/lkn/"/> </para>
 
     <note>
-    
       <para>A good starting place for setting up the kernel configuration is to
       run <command>make defconfig</command>. This will set the base
       configuration to a good state that takes your current system architecture
@@ -106,17 +105,25 @@
       <para>Be sure to enable/disable/set the following features or the system might
       not work correctly or boot at all:</para>
 
-      <screen role="nodump" revision="sysv">Device Drivers  ---&gt;
+      <screen role="nodump" revision="sysv">General setup -->
+   &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
+Device Drivers  ---&gt;
+  Graphics support ---&gt;
+   Frame buffer Devices ---&gt;
+      [*] Support for frame buffer devices ----
   Generic Driver Options  ---&gt;
    [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
    [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]</screen>
 
       <screen role="nodump" revision="systemd">General setup -->
    [ ] Auditing Support [CONFIG_AUDIT]
+   &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
    [*] Control Group support [CONFIG_CGROUPS]
    [ ] Enable deprecated sysfs features to support old userspace tools [CONFIG_SYSFS_DEPRECATED]
-   [*] Configure standard kernel features (expert users) [CONFIG_EXPERT] ---&gt;         
+   [*] Configure standard kernel features (expert users) [CONFIG_EXPERT] ---&gt;
       [*] open by fhandle syscalls [CONFIG_FHANDLE]
+   CPU/Task time and stats accounting ---&gt;
+      [*] Pressure stall information tracking [CONFIG_PSI]
 Firmware Drivers  ---&gt;
    [*] Export DMI identification via sysfs to userspace [CONFIG_DMIID]
 General architecture-dependent options  ---&gt;
@@ -125,6 +132,9 @@ Networking support  ---&gt;
   Networking options  ---&gt;
    &lt;*&gt; The IPv6 protocol [CONFIG_IPV6]
 Device Drivers  ---&gt;
+  Graphics support ---&gt;
+   Frame buffer Devices ---&gt;
+      [*] Support for frame buffer devices ----
   Generic Driver Options  ---&gt;
    [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
    [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
@@ -159,6 +169,18 @@ File systems  ---&gt;
       <title>The rationale for the above configuration items:</title>
 
       <varlistentry>
+        <term>
+          <parameter>
+            Enable kernel headers through /sys/kernel/kheaders.tar.xz
+          </parameter>
+        </term>
+        <listitem>
+          <para>This will require <command>cpio</command> building the kernel.
+          <command>cpio</command> is not installed by LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>Support for uevent helper</parameter></term>
         <listitem>
           <para>Having this option set may interfere with device
@@ -189,6 +211,12 @@ File systems  ---&gt;
     we do not recommend this option. It is often better to explore all the
     configuration menus and create the kernel configuration from
     scratch.</para>
+
+    <note revision="systemd">
+      <para revision="systemd">Ensure that CONFIG_DEFAULT_HOSTNAME is set to '(none)' or a hostname.
+      If it is left blank, systemd will fail to set the hostname to the
+      content of <filename>/etc/hostname</filename>.</para>
+    </note>
 
     <para>Compile the kernel image and modules:</para>
 
@@ -224,9 +252,9 @@ File systems  ---&gt;
     used. The filename below can be changed to suit your taste, but the stem of
     the filename should be <emphasis>vmlinuz</emphasis> to be compatible with
     the automatic setup of the boot process described in the next section.  The
-    following command assumes an x86 architecture:</para>
+    following command assumes an ARM64 architecture:</para>
 
-<screen><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;</userinput></screen>
+<screen><userinput remap="install">cp -iv arch/arm64/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;</userinput></screen>
 
     <para><filename>System.map</filename> is a symbol file for the kernel.
     It maps the function entry points of every function in the kernel API,
@@ -262,11 +290,11 @@ cp -r Documentation/* /usr/share/doc/linux-&linux-version;</userinput></screen>
     source.</para>
 
     <note>
-      <para>In many cases, the configuration of the kernel will need to be 
+      <para>In many cases, the configuration of the kernel will need to be
       updated for packages that will be installed later in BLFS.  Unlike
       other packages, it is not necessary to remove the kernel source tree
-      after the newly built kernel is installed.</para>  
-    
+      after the newly built kernel is installed.</para>
+
       <para>If the kernel source tree is going to be retained, run
       <command>chown -R 0:0</command> on the <filename
       class="directory">linux-&linux-version;</filename> directory to ensure

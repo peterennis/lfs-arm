@@ -110,10 +110,11 @@ function get_packages( $package, $dirpath )
 
 if ( $package == "bc"         ) $dirpath = "https://github.com/gavinhoward/bc/releases";
 if ( $package == "check"      ) $dirpath = "https://github.com/libcheck/check/releases";
-if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/";
-if ( $package == "expat"      ) $dirpath = "http://sourceforge.net/projects/expat/files";
+if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
+if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
-if ( $package == "expect"     ) $dirpath = "http://sourceforge.net/projects/expect/files";
+if ( $package == "expect"     ) $dirpath = "https://sourceforge.net/projects/expect/files";
+if ( $package == "eudev"      ) $dirpath = "https://github.com/eudev-project/eudev/releases";
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
 if ( $package == "flex"       ) $dirpath = "https://github.com/westes/flex/releases";
 if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
@@ -122,7 +123,8 @@ if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk
 if ( $package == "libffi"     ) $dirpath = "https://github.com/libffi/libffi/releases";
 if ( $package == "meson"      ) $dirpath = "https://github.com/mesonbuild/meson/releases";
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
-if ( $package == "mpfr"       ) $dirpath = "http://mpfr.loria.fr/mpfr-current";
+if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
+if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = "https://github.com/ninja-build/ninja/releases";
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
@@ -131,15 +133,17 @@ if ( $package == "shadow"     ) $dirpath = "https://github.com/shadow-maint/shad
 if ( $package == "MarkupSafe" ) $dirpath = "https://pypi.python.org/pypi/MarkupSafe/";
 if ( $package == "Jinja"      ) $dirpath = "https://pypi.python.org/pypi/Jinja2/";
 if ( $package == "systemd"    ) $dirpath = "https://github.com/systemd/systemd/releases";
-if ( $package == "tcl"        ) $dirpath = "http://sourceforge.net/projects/tcl/files";
+//if ( $package == "tcl"        ) $dirpath = "https://sourceforge.net/projects/tcl/files";
+if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
 if ( $package == "util-linux" ) $dirpath = max_parent( $dirpath, "v." );
 if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/tags";
 if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/releases";
-//if ( $package == "vim"        ) $dirpath = "ftp://ftp.vim.org/pub/vim/unix";
 
   // Check for ftp
   if ( preg_match( "/^ftp/", $dirpath ) )
   {
+    echo "ftp should not occur\n";
+  /*
     $dirpath  = substr( $dirpath, 6 );           // Remove ftp://
     $dirpath  = rtrim ( $dirpath, "/" );         // Trim any trailing slash
     $position = strpos( $dirpath, "/" );         // Divide at first slash
@@ -185,6 +189,7 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
 
     $lines = ftp_rawlist ($conn, $path);
     ftp_close( $conn );
+*/
   }
   else // http(s)
   {
@@ -242,6 +247,9 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
   if ( $package == "e2fsprogs" )
      return find_max( $lines, "/v\d/", "/^.*v(\d[\d\.]+\d).*$/" );
 
+  if ( $package == "eudev" )
+     return find_max( $lines, "/Release/", "/^.*Release (\d[\d\.]+\d).*$/" );
+
   if ( $package == "expect" )
      return find_max( $lines, "/expect/", "/^.*expect(\d[\d\.]+\d).tar.*$/" );
 
@@ -257,7 +265,7 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
   }
 
   if ( $package == "tcl" )
-     return find_max( $lines, "/tcl/", "/^.*tcl(\d[\d\.]*\d)-src.*$/" );
+     return find_max( $lines, "/tcl\d/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
 
   if ( $package == "ninja" )
      return find_max( $lines, "/v\d/", "/^.*v(\d[\d\.]*\d).*$/" );
@@ -278,7 +286,7 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
   if ( $package == "psmisc" )
-     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+) .*$/" );
+     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+).tar.*$/" );
 
   if ( $package == "grub" )
      return find_max( $lines, "/grub/", "/^.*grub-([\d\.]+).tar.xz.*$/" );
@@ -410,7 +418,6 @@ function mail_to_lfs()
    }
 
    exec ( "echo '$message' | mailx -r $from -s '$subject' $to" );
-   //echo $message;
 }
 
 function html()

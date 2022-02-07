@@ -24,6 +24,10 @@
 <!ENTITY coreutils-i18n-patch-md5 "1eeba2736dfea013509f9975365e4e32">
 <!ENTITY coreutils-i18n-patch-size "166 KB">
 
+<!ENTITY coreutils-chmod-patch "coreutils-&coreutils-version;-chmod_fix-1.patch">
+<!ENTITY coreutils-chmod-patch-md5 "4709df88e68279e6ef357aa819ba5b1a">
+<!ENTITY coreutils-chmod-patch-size "3.8 KB">
+
 <!--
 <!ENTITY flex-fixes-patch "flex-&flex-version;-upstream_fixes-3.patch">
 <!ENTITY flex-fixes-patch-md5 "b46f6b0380e502a3dfb8b503227cd680">
@@ -64,13 +68,11 @@
 <!ENTITY libpipeline-checks-patch "libpipeline-&libpipeline-version;-check_fixes-3.patch">
 <!ENTITY libpipeline-checks-patch-md5 "0cd71f98eadaee07647d021d2e4c8621">
 <!ENTITY libpipeline-checks-patch-size "22 KB">
--->
-<!--
-<!ENTITY meson-fix-patch "meson-&meson-version;-upstream_fix-1.patch">
-<!ENTITY meson-fix-patch-md5 "589012d95c80f256e569598caf27c9a6">
-<!ENTITY meson-fix-patch-size "2.2 KB">
--->
-<!--
+
+<!ENTITY meson-fix-patch "meson-&meson-version;-upstream_fix-2.patch">
+<!ENTITY meson-fix-patch-md5 "dd0b2187d287abcb41c3dd7e497b7df3">
+<!ENTITY meson-fix-patch-size "5.5 KB">
+
 <!ENTITY ninja-limit-jobs-patch "ninja-&ninja-version;-add_NINJAJOBS_var-1.patch">
 <!ENTITY ninja-limit-jobs-patch-md5 "f537a633532492e805aa342fa869ca45">
 <!ENTITY ninja-limit-jobs-patch-size "2.5 KB">
@@ -79,11 +81,17 @@
 <!ENTITY perl-fix-patch "perl-&perl-version;-upstream_fixes-1.patch">
 <!ENTITY perl-fix-patch-md5 "fb42558b59ed95ee00eb9f1c1c9b8056">
 <!ENTITY perl-fix-patch-size "1.6 KB">
-
+<!--
+<!ENTITY shadow-segfault-patch "shadow-&shadow-version;-useradd_segfault-1.patch">
+<!ENTITY shadow-segfault-patch-md5 "66b299c0c9ac66fdb7c91b40df5984c0">
+<!ENTITY shadow-segfault-patch-size "1.7 KB">
+-->
 <!ENTITY sysvinit-consolidated-patch "sysvinit-&sysvinit-version;-consolidated-1.patch">
 <!ENTITY sysvinit-consolidated-patch-md5 "4900322141d493e74020c9cf437b2cdc">
 <!ENTITY sysvinit-consolidated-patch-size "2.4 KB">
 
+<!--
 <!ENTITY systemd-upstream-fixes-patch "systemd-&systemd-version;-upstream_fixes-1.patch">
+-->
 <!ENTITY systemd-upstream-fixes-patch-md5 "a4449dedf514486b8995ee501d1bb8cc">
 <!ENTITY systemd-upstream-fixes-patch-size "4 KB">

@@ -45,8 +45,10 @@
 
     <para>Prepare Findutils for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
-
+<screen><userinput remap="configure">case $(uname -m) in
+        arm) TIME_T_32_BIT_OK=yes ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+    aarch64) ./configure --prefix=/usr --localstatedir=/var/lib/locate ;;
+esac</userinput></screen>
     <variablelist>
       <title>The meaning of the configure options:</title>
 
@@ -56,6 +58,13 @@
           <para>This option changes the location of the <command>locate</command>
           database to be in <filename class="directory">/var/lib/locate</filename>,
           which is FHS-compliant.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>TIME_32_BIT_OK=yes</command></term>
+        <listitem>
+          <para>This setting is needed for building on a 32 bit system.</para>
         </listitem>
       </varlistentry>
 

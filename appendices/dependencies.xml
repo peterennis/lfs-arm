@@ -442,7 +442,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep,
-          Libcap, Make, Patch, Perl, Sed, and Texinfo</seg>
+          Libcap, Make, OpenSSL, Patch, Perl, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1594,7 +1594,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-          Gzip, Make, Pkg-config, Sed, Xz, and Zlib</seg>
+          Gzip, Make, OpenSSL, Pkg-config, Sed, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1899,7 +1899,9 @@
       <segmentedlist id="linux-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="&blfs-book;general/cpio.html">cpio</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2340,8 +2342,8 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Openssl dependency info -->
-  <bridgehead renderas="sect2" id="openssl-dep">Openssl</bridgehead>
+<!-- Begin OpenSSL dependency info -->
+  <bridgehead renderas="sect2" id="openssl-dep">OpenSSL</bridgehead>
 
       <segmentedlist id="openssl-depends">
         <segtitle>&dependencies;</segtitle>
@@ -2367,7 +2369,7 @@
       <segmentedlist id="openssl-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Linux</seg>
+          <seg>Coreutils, Kmod, and Linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2787,8 +2789,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
-         GCC, Glibc, Gperf, Grep, Intltool, Jinja2, Libcap, Meson, Sed, and
-         Util-linux</seg>
+         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Meson, Sed, Util-linux,
+         and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3060,6 +3062,8 @@
         <seglistitem>
           <seg>
             <ulink
+              url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+            and <ulink
               url="&blfs-book;postlfs/smartmontools.html">smartmontools</ulink>
           </seg>
         </seglistitem>
@@ -3252,14 +3256,16 @@
       <segmentedlist id="zstd-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>GCC</seg>
+          <seg>GCC and Systemd</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="zstd-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="http://lz4.github.io/lz4/">LZ4</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 

@@ -53,6 +53,17 @@
         <command>ip link</command> after you have booted your system.
       </para>
 
+      <note>
+        <para>The interface names depend on the implementation and
+        configuration of the udev daemon running on the system.  The udev
+        daemon for LFS (<command>systemd-udevd</command>, installed in
+        <xref linkend="ch-system-systemd"/>) will not run unless the LFS
+        system is booted.  So it's unreliable to determine the interface
+        names being used in LFS system by running those commands on the host
+        distro,
+        <emphasis>even though in the chroot environment</emphasis>.</para>
+      </note>
+
       <para>
         For most systems, there is only one network interface for
         each type of connection.  For example, the classic interface
@@ -173,15 +184,26 @@ EOF</userinput></screen>
       or any other software that generates an <filename>/etc/resolv.conf</filename>
       (ex: a <command>resolvconf</command> program other than the one
       provided by systemd), the <command>systemd-resolved</command> service
-      should not be used.</para></note>
+      should not be used.</para>
+
+      <para>To disable systemd-resolved, issue the following command:</para>
+
+<screen role="nodump"><userinput>systemctl disable systemd-resolved</userinput></screen></note>
 
       <para>When using <command>systemd-resolved</command> for DNS
       configuration, it creates the file
-      <filename>/run/systemd/resolve/resolv.conf</filename>. Create a
+      <filename>/run/systemd/resolve/stub-resolv.conf</filename>.
+      And, if <filename>/etc/resolv.conf</filename> does not exist, it
+      will be created by <command>systemd-resolved</command> as a symlink to
+      <filename>/run/systemd/resolve/stub-resolv.conf</filename>. So it's
+      unnecessary to create a <filename>/etc/resolv.conf</filename>
+      manually.</para>
+      <!--Create a
       symlink in <filename>/etc</filename> to use the generated file:</para>
 
 <screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
-
+      At least in systemd-250, this file gets created on first bootup.
+      -->
     </sect3>
 
     <sect3 id="resolv-conf-static">
@@ -327,7 +349,7 @@ EOF</userinput></screen>
      changed for specific uses or requirements (if assigned an IP address by a
      network/system administrator and the machine will be connected to an
      existing network). The optional alias name(s) can be omitted, and the
-     <replaceable>&lt;192.168.0.2</replaceable> line can be omitted if you
+     <replaceable>&lt;192.168.0.2&gt;</replaceable> line can be omitted if you
      are using a connection configured with DHCP or IPv6 Autoconfiguration.</para>
 
      <para>The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents

@@ -43,7 +43,7 @@
 
     <para>At first, fix an issue breaking
     <filename class="libraryfile">libasan.a</filename> building this package
-    with Glibc-2.34:</para>
+    with Glibc-2.34 or later:</para>
 
 <screen><userinput remap="pre">sed -e '/static.*SIGSTKSZ/d' \
     -e 's/return kAltStackSize/return SIGSTKSZ * 4/' \
@@ -273,7 +273,7 @@ SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
 
    <para>A 32-bit system may see a few different directories. For example, here
-   is the output from an i686 machine:</para>
+   is the output from a 32bit ARM  machine:</para>
 
 <screen><computeroutput>SEARCH_DIR("/usr/armv6l-unknown-linux-gnueabihf/lib")
 SEARCH_DIR("/usr/local/lib")

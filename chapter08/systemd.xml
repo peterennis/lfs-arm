@@ -41,14 +41,10 @@
     <title>Installation of systemd</title>
 
     <!--Fix CVE-2021-33910 -->
+    <!--
     <para>First, apply a patch to fix a security vulnerability:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-upstream_fixes-1.patch</userinput></screen>
-
-<!-- Seems to be not needed anymore with 248
-    <para>Remove tests that cannot be built in chroot:</para>
-
-<screen><userinput remap="pre">sed '177,$ d' -i src/resolve/meson.build</userinput></screen>
 -->
 
     <para>Remove two unneeded groups,
@@ -56,19 +52,14 @@
     <systemitem class="groupname">sgx</systemitem>, from the default udev
     rules:</para>
 
-<screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
+ <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
         -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
-
-    <para>Fix a meson problem:</para>
-
- <screen><userinput remap="pre">sed -i 's/+ want_libfuzzer.*$/and want_libfuzzer/' meson.build</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">mkdir -p build
 cd       build
 
-LANG=en_US.UTF-8                    \
 meson --prefix=/usr                 \
       --sysconfdir=/etc             \
       --localstatedir=/var          \
@@ -141,7 +132,8 @@ meson --prefix=/usr                 \
           services responsible for setting up the
           <filename>/etc/group</filename> and
           <filename>/etc/passwd</filename> files. Both files
-          were created earlier in this chapter.</para>
+          were created in the previous chapter. This daemon is not useful
+          on an LFS system since user accounts are manually created.</para>
         </listitem>
       </varlistentry>
 
@@ -182,11 +174,11 @@ meson --prefix=/usr                 \
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
+<screen><userinput remap="install">ninja install</userinput></screen>
 
     <para>Install the man pages:</para>
 
@@ -209,15 +201,20 @@ meson --prefix=/usr                 \
     use a network configuration other than what is provided by
     systemd-networkd:</para>
     <!-- Observed halting startup with dhcpcd handling the primary NIC -->
- 
+
 <screen><userinput remap="adjust">systemctl disable systemd-time-wait-sync.service</userinput></screen>
+
+    <para>Fix a regression in a systemd unit that causes a delay when
+    switching TTYs:</para>
+
+<screen><userinput remap="adjust">sed -i 's/idle/simple/' /usr/lib/systemd/system/getty@.service</userinput></screen>
 
 <!-- dev: 50-pid-max.conf is not removed in BLFS, so I commented the following out.
           If it causes any trouble, we can add this back and also copy it into BLFS -->
 <!--
     <para>Prevent systemd from resetting the maximum PID value which causes
     some problems with packages and units in BLFS:</para>
-    
+
 <screen><userinput remap="adjust">rm -f /usr/lib/sysctl.d/50-pid-max.conf</userinput></screen>
 -->
 
@@ -255,8 +252,8 @@ meson --prefix=/usr                 \
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /usr/lib/systemd, /usr/lib/udev, /usr/include/systemd,
-        /usr/lib/binfmt.d, /usr/lib/environment.d, /usr/lib/kernel, 
-        /usr/lib/modules-load.d, /usr/lib/sysctl.d, /usr/lib/systemd, 
+        /usr/lib/binfmt.d, /usr/lib/environment.d, /usr/lib/kernel,
+        /usr/lib/modules-load.d, /usr/lib/sysctl.d, /usr/lib/systemd,
         /usr/lib/tmpfiles.d,
         /usr/share/doc/systemd-&systemd-version;, /usr/share/factory,
         /usr/share/systemd, /var/lib/systemd, and /var/log/journal</seg>
@@ -327,7 +324,7 @@ meson --prefix=/usr                 \
         <term><command>init</command></term>
         <listitem>
           <para>Is the first process to be started when the kernel has initialized
-          the hardware which takes over the boot process and starts all 
+          the hardware which takes over the boot process and starts all
           processes according to its configuration files. In this case, it starts
           systemd</para>
           <indexterm zone="ch-system-systemd init">
@@ -393,7 +390,7 @@ meson --prefix=/usr                 \
       <varlistentry id="networkctl">
         <term><command>networkctl</command></term>
         <listitem>
-          <para>Is used to introspect and configure the state of the network 
+          <para>Is used to introspect and configure the state of the network
           links configured by systemd-networkd</para>
           <indexterm zone="ch-system-systemd networkctl">
             <primary sortas="b-networkctl">networkctl</primary>
@@ -481,7 +478,7 @@ meson --prefix=/usr                 \
       <varlistentry id="shutdown">
         <term><command>shutdown</command></term>
         <listitem>
-          <para>Brings the system down in a safe and secure manner, signaling 
+          <para>Brings the system down in a safe and secure manner, signaling
           all processes and notifying all logged-in users</para>
           <indexterm zone="ch-system-systemd shutdown">
             <primary sortas="b-shutdown">shutdown</primary>
@@ -778,7 +775,7 @@ meson --prefix=/usr                 \
       <varlistentry id="systemd-tty-ask-password-agent">
         <term><command>systemd-tty-ask-password-agent</command></term>
         <listitem>
-          <para>Is used to list and/or process pending systemd password 
+          <para>Is used to list and/or process pending systemd password
           requests</para>
           <indexterm zone="ch-system-systemd systemd-tty-ask-password-agent">
             <primary sortas="b-systemd-tty-ask-password-agent">systemd-tty-ask-password-agent</primary>
@@ -811,9 +808,9 @@ meson --prefix=/usr                 \
       <varlistentry id="udevadm">
         <term><command>udevadm</command></term>
         <listitem>
-          <para>Is a generic udev administration tool which controls the udevd 
-          daemon, provides info from the Udev hardware database, monitors 
-          uevents, waits for uevents to finish, tests udev configuration, and 
+          <para>Is a generic udev administration tool which controls the udevd
+          daemon, provides info from the Udev hardware database, monitors
+          uevents, waits for uevents to finish, tests udev configuration, and
           triggers uevents for a given device</para>
           <indexterm zone="ch-system-systemd udevadm">
             <primary sortas="b-udevadm">udevadm</primary>

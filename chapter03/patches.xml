@@ -59,6 +59,14 @@
         <para>MD5 sum: <literal>&coreutils-i18n-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
+
+    <varlistentry>
+      <term>Coreutils Chmod Fix Patch - <token>&coreutils-chmod-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&coreutils-chmod-patch;"/></para>
+        <para>MD5 sum: <literal>&coreutils-chmod-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
 <!--
     <varlistentry>
       <term>File Upstream Fixes Patch - <token>&file-upstream-fixes-patch-size;</token>:</term>
@@ -91,8 +99,7 @@
         <para>MD5 sum: <literal>&kbd-backspace-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
- <!--
+<!--
     <varlistentry>
       <term>Meson Upstream Fix Patch - <token>&meson-fix-patch-size;</token>:</term>
       <listitem>
@@ -100,8 +107,7 @@
         <para>MD5 sum: <literal>&meson-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
-<!--
+
     <varlistentry>
       <term>Libpipeline Checks Patch - <token>&libpipeline-checks-patch-size;</token>:</term>
       <listitem>
@@ -118,7 +124,15 @@
         <para>MD5 sum: <literal>&perl-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+<!--
+    <varlistentry>
+      <term>Shadow Segfault Fix Patch - <token>&shadow-segfault-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&shadow-segfault-patch;"/></para>
+        <para>MD5 sum: <literal>&shadow-segfault-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+-->
     <varlistentry revision="sysv">
       <term>Sysvinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>
@@ -127,6 +141,7 @@
       </listitem>
     </varlistentry>
 
+    <!--
     <varlistentry revision="systemd">
       <term>Systemd Upstream Fixes Patch - <token>&systemd-upstream-fixes-patch-size;</token>:</term>
       <listitem>
@@ -134,7 +149,7 @@
         <para>MD5 sum: <literal>&systemd-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+    -->
   </variablelist>
 
   <para>Total size of these patches: about <returnvalue/></para>

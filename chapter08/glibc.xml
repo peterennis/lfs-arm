@@ -173,6 +173,7 @@ esac</userinput></screen>
         addresses.</para>
       </listitem>
 
+<!--
       <listitem>
         <para>The <emphasis>rt/tst-cputimer{1,2,3}</emphasis> tests depend on
         the host system kernel. Kernels 4.14.91&ndash;4.14.96,
